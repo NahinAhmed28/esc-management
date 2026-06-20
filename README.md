@@ -1,93 +1,33 @@
-# Welcome to the Project Documentation
+# ESC Management
 
-- [Technology Requirements](#Technology-Requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [File Upload Documentation](#file-upload-documentation)
+ESC Management is a web application for managing ESC-related services, records, or administrative workflows.
 
+## Features
 
+- Administrative workflow management
+- Database-backed service or record tracking
+- User/role-based access potential
+- Dashboard and reporting-ready structure
+- Environment-based configuration for deployment
 
-## Technology Requirements
+## Modules
 
+- Authentication module: users, roles, and protected routes
+- Management module: core ESC records and actions
+- Dashboard module: summaries, filters, and navigation
+- Reporting module: exports, status views, and operational summaries
+- Configuration module: environment, permissions, and deployment settings
 
-##### PHP ^8.1
-##### mysql
-##### Mariadb Server
-##### Laravel ^10.0
+## System Architecture
 
-## Installation
+The system is organized as a management web application. The presentation layer provides dashboards and forms. Controllers handle requests and business workflows. Models persist operational records in the database. Services can be added for notifications, reporting, or integrations with external ESC systems.
 
-```sh
-git clone this-url
-```
+## Getting Started
 
-```sh
-cd project-root
-```
-
-##### To create cache, sessions and views folder into storage/framework directory, if not existing these folder or ignore this one (Use git bash terminal)
-
-```sh
-mkdir storage/framework/{sessions,views,cache}
-```
-
-##### Install [composer](https://getcomposer.org/) dependencies of this project by running
-
-```sh
+```bash
+git clone https://github.com/NahinAhmed28/esc-management.git
+cd esc-management
 composer install
-```
-
-##### Copy `.env-example` to `.env` and configure your database and other connection.
-
-##### Run this two command also
-
-```shell
-php artisan key:generate
-php artisan storage:link 
-```
-
-##### Run this command for migration and seeder
-
-```shell
-php artisan migrate:fresh --seed
-```
-
-
-##### Run this command to clear all type of cache
-
-```shell
-php artisan cache:clear
-```
-
-```shell
-php artisan optimize:clear
-```
-
-
-##### Run this command to start application
-
-```shell
-php artisan serve
-```
-
-## Usage
-
-Go to the link `/admin/login` like `http://127.0.0.1:8000/admin/login` for login and enter the system admin credentials below.
-
-##### Demo super admin credentials
-
-```shell
-email: superadmin@esc.com
-password: password
-
-email: admin@esc.com
-password: password
-```
-
-## File Upload Documentation
-
-If file or image is not displayed after uploading, please run this bellow command
-
-```shell
-php artisan storage:link 
+npm install
+npm run dev
 ```
